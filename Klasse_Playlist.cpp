@@ -10,7 +10,7 @@
 
 #include <iostream>
 #include <string>
-#include "playlist.h"
+#include "Klasse_Playlist.h"
 #include <fstream>
 
 using namespace std;
@@ -23,7 +23,7 @@ void playlist::BenutzerdatenEingeben(string& titel, string& interpret, mkat& kat
 
 	while (1)
 	{
-		// Ä:\x8e ä:\x84 Ö:\x99 ö:\x94 Ü:\x9A ü:\x81 ß:\xe1
+		// Ã„:\x8e Ã¤:\x84 Ã–:\x99 Ã¶:\x94 Ãœ:\x9A Ã¼:\x81 ÃŸ:\xe1
 		system("cls");
 		cout << "\nGeben Sie den Namen des Titels ein: ";
 		// Eingabepuffer leeren
@@ -51,7 +51,7 @@ void playlist::BenutzerdatenEingeben(string& titel, string& interpret, mkat& kat
 
 // Hilfsfunktion:
 // Umwandlung eines Integerwertes in den Datentyp enum mkat
-// Rückgabe true, wenn die Umwandlung funktioniert hat, sonst false
+// RÃ¼ckgabe true, wenn die Umwandlung funktioniert hat, sonst false
 /*================================================================*/
 bool playlist::int_in_enummkat(int eingabe, enum mkat& ausgabe)
 /*================================================================*/
@@ -90,7 +90,7 @@ bool playlist::int_in_enummkat(int eingabe, enum mkat& ausgabe)
 }
 
 // Hilfsfunktion:
-// Ausgabe von Befehlszeile über cout und Einlesen der Benutzereingabe in text
+// Ausgabe von Befehlszeile Ã¼ber cout und Einlesen der Benutzereingabe in text
 
 /*==============================================================================================*/
 void playlist::ZeileEingeben(string befehlszeile, string& text)
@@ -102,12 +102,12 @@ void playlist::ZeileEingeben(string befehlszeile, string& text)
 	// Eingabepuffer leeren
 	cin.seekg(0, std::ios::end);
 	cin.clear();
-	/* getline liest bis zum nächsten Carriage Return ein */
+	/* getline liest bis zum nÃ¤chsten Carriage Return ein */
 	getline(cin, text);
 
 }
 
-// Hilfsfunktion: Umwandlung des Aufzählungstyps enum mkat
+// Hilfsfunktion: Umwandlung des AufzÃ¤hlungstyps enum mkat
 // in einen C-string zur Ausgabe
 /*=============================================================*/
 const char* playlist::enumkat_in_string(mkat eingabe)
@@ -141,7 +141,7 @@ void playlist::TitelEinfuegen(string Name, string Interpret, mkat Kategorie)
 /*=====================================================================================*/
 
 {
-	/* Titel zu der verketteten Liste hinzufügen */
+	/* Titel zu der verketteten Liste hinzufÃ¼gen */
 	struct titel* ptr;
 
 	if ((ptr = new titel) == NULL) {
@@ -184,7 +184,7 @@ bool playlist::TitelLoeschen(string Name)
 	else {
 		// der gesuchte Titel ist der erste in der Liste 
 		if (ptr == start_pointer)
-			/* das nächste Element wird das erste in der Liste */
+			/* das nÃ¤chste Element wird das erste in der Liste */
 			start_pointer = ptr->next;
 		else
 			/* der next-Zeiger des Elementes vor dem zu loeschenden Element
@@ -217,7 +217,7 @@ void playlist::AlleTitelAnzeigen()
 		/* Ausgabe der playlist */
 		cout << ptr->name << "," << ptr->interpret << ",";
 		cout << enumkat_in_string(ptr->kategorie) << endl;
-		/* pointer auf das nächste Element setzen */
+		/* pointer auf das nÃ¤chste Element setzen */
 		ptr = ptr->next;
 	}
 	cout << "\n";
@@ -320,7 +320,7 @@ void playlist::PlaylistLaden()
 	Quelle.open(hilfe.c_str(), ios_base::in);
 
 	if (!Quelle) {
-		cerr << "Playlyist \"" << name << "\" kann nicht ge\x94 \bffnet werden!\n";
+		cerr << "Playlist \"" << name << "\" kann nicht ge\x94 \bffnet werden!\n";
 		system("pause");
 		return;
 	}
@@ -350,6 +350,16 @@ void playlist::PlaylistLaden()
 			start_pointer = ptr;
 		}
 	}
+
+	
+
+/*====================================================*/
+void playlist::Abspielen()
+/*====================================================*/
+	{
+
+	}
+
 
 	Quelle.close();
 }
