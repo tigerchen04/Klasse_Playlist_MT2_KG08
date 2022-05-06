@@ -350,25 +350,33 @@ void playlist::PlaylistLaden()
 			start_pointer = ptr;
 		}
 	}
+	Quelle.close();
 
-	
+}
 
-/*====================================================*/
-void playlist::Abspielen()
-/*====================================================*/
-	{
+	/*====================================================*/
+	void playlist::Abspielen(int Wunsch)
+		/*====================================================*/
+	 {
+		int Wunsch;
 		string liedwunsch;
 		string wunschplaylist;
 
+		cout << "Möchtest du ein Lied (1) oder eine Playlist (2) abspielen?";
+			cin >> Wunsch;
+		if (Wunsch == 1)
+		{
+			playlist::AlleTitelAnzeigen();
+		}
+		else if (Wunsch == 2)
+		{
+		}
+		else
+		{
+			cout << "Fehler";
+			return;
+		}
 		//Menü mit zwei Optionen: Lied oder Playlist abspielen
 		//Bei Lied abspielen: Playlist::AlleTitelAnzeigen und darauß aussuchen
 
 	};
-
-
-	Quelle.close();
-}
-
-
-
-
