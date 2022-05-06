@@ -7,7 +7,7 @@
 /*						                      		    */
 /*======================================================*/
 
-#include "playlist.h"
+#include "Klasse_Playlist.h"
 #include<conio.h>
 #include <windows.h> 
 
@@ -107,9 +107,9 @@ int menue(string pl)
 
 {
 	//int eingabe = -10;;
-	// Bildschirm löschen
+	// Bildschirm lÃ¶schen
 	system("cls");
-	// Ä:\x8e ä:\x84 Ö:\x99 ö:\x94 Ü:\x9A ü:\x81 ß:\xe1
+	// Ã„:\x8e Ã¤:\x84 Ã–:\x99 Ã¶:\x94 Ãœ:\x9A Ã¼:\x81 ÃŸ:\xe1
 	// Menu anzeigen
 	cout << "\nPlaylisten verwalten " << "\n====================\n\n";
 	cout << "Name der aktuellen Playlist: " << pl << endl;
