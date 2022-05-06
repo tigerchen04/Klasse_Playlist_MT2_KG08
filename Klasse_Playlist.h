@@ -40,7 +40,7 @@ public:
 	void AlleTitelAnzeigen();
 	void PlaylistSpeichern();
 	void PlaylistLaden();
-	void Abspielen();
+	void Abspielen(int Wunsch);
 	// oeffentliche Hilfsfunktionen
 	void BenutzerdatenEingeben(string& titel, string& interpret, mkat& CD_kategorie);
 	const char* enumkat_in_string(mkat eingabe);
