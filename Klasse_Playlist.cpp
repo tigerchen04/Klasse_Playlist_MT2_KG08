@@ -357,8 +357,13 @@ void playlist::PlaylistLaden()
 void playlist::Abspielen()
 /*====================================================*/
 	{
+		string liedwunsch;
+		string wunschplaylist;
 
-	}
+		//Menü mit zwei Optionen: Lied oder Playlist abspielen
+		//Bei Lied abspielen: Playlist::AlleTitelAnzeigen und darauß aussuchen
+
+	};
 
 
 	Quelle.close();
