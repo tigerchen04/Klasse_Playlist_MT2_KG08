@@ -3,7 +3,7 @@
 /* Inhalt:		Benutzung der Klasse plylist           	*/
 /* Author:		Bernd Stock								*/
 /* Erstellt am: Maerz 2019								*/
-/* Geaendert:	                                        */
+/* Geaendert: März 2022 Paul Frankowski und Amelie Klaus                */
 /*						                      		    */
 /*======================================================*/
 
@@ -90,6 +90,9 @@ int main(void)
 			my_playlist.PlaylistLaden();
 			break;
 		case 8:
+			//Abspielen
+			my_playlist.Abspielen();
+		case 9:
 			break;
 		default:
 			cout << "\nFalsche Eingabe!!!\n";
