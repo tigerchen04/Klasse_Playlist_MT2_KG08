@@ -3,11 +3,12 @@
 /* Inhalt:		Benutzung der Klasse plylist           	*/
 /* Author:		Bernd Stock								*/
 /* Erstellt am: Maerz 2019								*/
-/* Geaendert: März 2022 Paul Frankowski und Amelie Klaus                */
+/* Geaendert:	                                        */
 /*						                      		    */
 /*======================================================*/
 
 #include "Klasse_Playlist.h"
+#include <iostream>
 #include<conio.h>
 #include <windows.h> 
 
@@ -73,7 +74,9 @@ int main(void)
 			break;
 		case 5:
 			// Playlist abspielen
-			cout << "noch nicht implementiert" << endl;
+			cout << endl;
+			cout << my_playlist.get_name() << " wird abgespielt." << endl;
+			cout << "lied wird abgespielt..." << '\a'; '\n';
 			Sleep(2000);
 			break;
 		case 6:
@@ -92,6 +95,7 @@ int main(void)
 		case 8:
 			//Abspielen
 			my_playlist.Abspielen();
+			break;
 		case 9:
 			break;
 		default:
@@ -99,7 +103,7 @@ int main(void)
 			system("pause");
 			break;
 		}
-	} while (eingabe != 8);
+	} while (eingabe != 9);
 
 	return 1;
 }
@@ -124,7 +128,7 @@ int menue(string pl)
 	cout << "Playlist abspielen..........5\n";
 	cout << "Playlist speichern..........6\n";
 	cout << "Playlist laden..............7\n";
-	cout << "Lied/Playlist abspielen.....8\n";
+	cout << "Lied abspielen..............8\n";
 	cout << "Programm beenden............9\n";
 	cout << "\nBitte geben Sie eine Zahl ein:";
 	// Eingabepuffer leeren
