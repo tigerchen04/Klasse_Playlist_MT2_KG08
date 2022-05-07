@@ -124,7 +124,8 @@ int menue(string pl)
 	cout << "Playlist abspielen..........5\n";
 	cout << "Playlist speichern..........6\n";
 	cout << "Playlist laden..............7\n";
-	cout << "Programm beenden............8\n";
+	cout << "Lied/Playlist abspielen.....8\n";
+	cout << "Programm beenden............9\n";
 	cout << "\nBitte geben Sie eine Zahl ein:";
 	// Eingabepuffer leeren
 	cin.seekg(0, std::ios::end);
