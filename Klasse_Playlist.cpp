@@ -355,28 +355,38 @@ void playlist::PlaylistLaden()
 }
 
 	/*====================================================*/
-	void playlist::Abspielen(int Wunsch)
+	void playlist::Abspielen()
 		/*====================================================*/
 	 {
-		int Wunsch;
-		string liedwunsch;
-		string wunschplaylist;
+		int wunsch;
+		string Name; 
+		string i;
+		mkat k;
+		cout << endl;
+		
+		// nach dem Titel mit dem eingegebenen Namen suchen und anzeigen
 
-		cout << "Möchtest du ein Lied (1) oder eine Playlist (2) abspielen?";
-			cin >> Wunsch;
-		if (Wunsch == 1)
-		{
-			playlist::AlleTitelAnzeigen();
+		struct titel* ptr = start_pointer;
+
+		cout << endl;
+		cout << "Welches Lied willst du abspielen? Gib den Titel ein:" << endl;
+		cin >> Name;
+		while (ptr != NULL && (ptr->name != Name))
+			ptr = ptr->next;
+		if (ptr == NULL) {
+			//return false;
+			cout << "Titel ist nicht vorhanden!" << endl;
+			system("break");
 		}
-		else if (Wunsch == 2)
-		{
+		else {
+			// Ausgabe des Titels
+			i = ptr->interpret;
+			k = ptr->kategorie;
+			cout << Name << " vom Interpreten " << i << " wird abgespielt...\n" << '\a';
+			//return true;
 		}
-		else
-		{
-			cout << "Fehler";
-			return;
-		}
-		//Menü mit zwei Optionen: Lied oder Playlist abspielen
-		//Bei Lied abspielen: Playlist::AlleTitelAnzeigen und darauß aussuchen
+		
+		system("pause");
+
 
 	};
