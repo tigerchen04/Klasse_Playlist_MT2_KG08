@@ -51,6 +51,8 @@ private:
 
 	// Anker der verketteten Liste */
 	struct titel* start_pointer;
+	struct titel* vorheriger_titel;
+	
 	// Name der Playlist
 	string name;
 };
