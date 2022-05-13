@@ -341,15 +341,31 @@ void playlist::PlaylistLaden()
 			return;
 		}
 		else {
-
-			ptr->name = hilfe;
-			getline(Quelle, ptr->interpret);
-			getline(Quelle, hilfe);
-			ptr->kategorie = static_cast<mkat> (atoi(hilfe.c_str()));
-			ptr->next = start_pointer;
-			start_pointer = ptr;
+			if (start_pointer == NULL)
+			{
+				//nur erster Titel wird zum start_pointer...
+				ptr->name = hilfe;
+				getline(Quelle, ptr->interpret);
+				getline(Quelle, hilfe);
+				ptr->kategorie = static_cast<mkat> (atoi(hilfe.c_str()));
+				ptr->next = start_pointer;
+				start_pointer = ptr;
+				vorheriger_titel = ptr;
+			}
+			else
+			{
+				//...folgende Titel werden durch pionter vorheriger_titel angehangen
+				ptr->name = hilfe;
+				getline(Quelle, ptr->interpret);
+				getline(Quelle, hilfe);
+				ptr->kategorie = static_cast<mkat> (atoi(hilfe.c_str()));
+				vorheriger_titel->next = ptr;
+				vorheriger_titel = ptr;
+			}
 		}
 	}
+	vorheriger_titel->next = NULL;
+
 	Quelle.close();
 
 }
