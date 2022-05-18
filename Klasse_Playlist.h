@@ -38,6 +38,7 @@ public:
 	bool TitelSuchenundAnzeigen(string Name, string& i, mkat& k);
 	void ZeileEingeben(string befehlszeile, string& text);
 	void AlleTitelAnzeigen();
+	void Playlist_abspielen();
 	void PlaylistSpeichern();
 	void PlaylistLaden();
 	void Abspielen();
@@ -52,7 +53,7 @@ private:
 	// Anker der verketteten Liste */
 	struct titel* start_pointer;
 	struct titel* vorheriger_titel;
-	
+
 	// Name der Playlist
 	string name;
 };
