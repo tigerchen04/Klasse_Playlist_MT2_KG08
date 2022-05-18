@@ -74,10 +74,8 @@ int main(void)
 			break;
 		case 5:
 			// Playlist abspielen
-			cout << endl;
-			cout << my_playlist.get_name() << " wird abgespielt." << endl;
-			cout << "lied wird abgespielt..." << '\a'; '\n';
-			Sleep(2000);
+			my_playlist.Playlist_abspielen();
+
 			break;
 		case 6:
 			// Playlist speichern */
