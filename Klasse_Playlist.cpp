@@ -12,6 +12,7 @@
 #include <string>
 #include "Klasse_Playlist.h"
 #include <fstream>
+#include <windows.h>
 
 using namespace std;
 
@@ -223,7 +224,28 @@ void playlist::AlleTitelAnzeigen()
 	cout << "\n";
 	system("pause");
 }
-
+/*=====================================*/
+void playlist::Playlist_abspielen()
+/*=====================================*/
+{
+	/* ptr wird auf den Anfang der Liste gesetzt */
+	struct titel* ptr = start_pointer;
+	system("cls");
+	if (ptr == NULL) {
+		cout << "Die Playlist ist leer.\n";
+		system("pause");
+	}
+	while (ptr != NULL)
+	{
+		/* Ausgabe der playlist */
+		cout << ptr->name << " von " << ptr->interpret << " wird abgespielt." << '\a' << endl;
+		cout << "Druecken Sie eine beliebige Taste fuer das naechste Lied." << endl;
+		/* pointer auf das nächste Element setzen */
+		ptr = ptr->next;
+		Sleep(1000);
+	}
+	system("pause");
+}
 
 /*=========================================================================*/
 bool playlist::TitelSuchenundAnzeigen(string Name, string& i, mkat& k)
@@ -370,39 +392,39 @@ void playlist::PlaylistLaden()
 
 }
 
-	/*====================================================*/
-	void playlist::Abspielen()
-		/*====================================================*/
-	 {
-		int wunsch;
-		string Name; 
-		string i;
-		mkat k;
-		cout << endl;
-		
-		// nach dem Titel mit dem eingegebenen Namen suchen und anzeigen
+/*====================================================*/
+void playlist::Abspielen()
+/*====================================================*/
+{
+	int wunsch;
+	string Name;
+	string i;
+	mkat k;
+	cout << endl;
 
-		struct titel* ptr = start_pointer;
+	// nach dem Titel mit dem eingegebenen Namen suchen und anzeigen
 
-		cout << endl;
-		cout << "Welches Lied willst du abspielen? Gib den Titel ein:" << endl;
-		cin >> Name;
-		while (ptr != NULL && (ptr->name != Name))
-			ptr = ptr->next;
-		if (ptr == NULL) {
-			//return false;
-			cout << "Titel ist nicht vorhanden!" << endl;
-			system("break");
-		}
-		else {
-			// Ausgabe des Titels
-			i = ptr->interpret;
-			k = ptr->kategorie;
-			cout << Name << " vom Interpreten " << i << " wird abgespielt...\n" << '\a';
-			//return true;
-		}
-		
-		system("pause");
+	struct titel* ptr = start_pointer;
+
+	cout << endl;
+	cout << "Welches Lied willst du abspielen? Gib den Titel ein:" << endl;
+	cin >> Name;
+	while (ptr != NULL && (ptr->name != Name))
+		ptr = ptr->next;
+	if (ptr == NULL) {
+		//return false;
+		cout << "Titel ist nicht vorhanden!" << endl;
+		system("break");
+	}
+	else {
+		// Ausgabe des Titels
+		i = ptr->interpret;
+		k = ptr->kategorie;
+		cout << Name << " vom Interpreten " << i << " wird abgespielt...\n" << '\a';
+		//return true;
+	}
+
+	system("pause");
 
 
-	};
+};
